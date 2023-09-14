@@ -1,0 +1,87 @@
+<doctype html>
+
+    <html>
+
+        <head>
+
+            <style>
+            body {
+
+
+                text-align: center;
+                font-size: 30px;
+            }
+        </style>
+            <meta charset="utf-8">
+
+        </head>
+
+        <body>
+
+            <input id="n1" type="number" placeholder="عدد اول">
+            <span id="sign">?</span>
+
+            <input id="n2" type="number" placeholder="عدد دوم">
+            <span>=</span>
+            <span id="res">result</span>
+            <br><br>
+            <button onclick="cal('+')">+</button>
+            <button onclick="cal('-')">-</button>
+            <button onclick="cal('/')">/</button>
+            <button onclick="cal('*')">*</button>
+            <p id="color_name">color name</p>
+
+            <script>
+
+            var num1 = document.getElementById("n1");
+            var num2 = document.getElementById("n2");
+            var result = document.getElementById("res");
+            var s = document.getElementById("sign");
+
+
+            function cal(o) {
+                switch (o){
+
+                    case "+":
+                    result.innerHTML = parseInt(num1.value) + parseInt(num2.value);
+                    break;
+                    case "-":
+                    result.innerHTML = parseInt(num1.value) - parseInt(num2.value);
+                    break;
+                    case "/":
+                    result.innerHTML = parseInt(num1.value) / parseInt(num2.value);
+                    break;
+                    case "*":
+                    result.innerHTML = parseInt(num1.value) * parseInt(num2.value);
+                    
+                }
+                s.innerHTML=(o);
+                chgColor();
+                
+                var x = chgColor();
+                showColor(x);
+            }
+            function chgColor() {
+                if (result.innerHTML < 0) {
+                    result.style.color = "red";
+
+                    return "red";
+
+                }
+                else if (result.innerHTML > 0 && result.innerHTML <= 100) {
+                    result.style.color = "green";
+                    return "green";
+                }
+                else {
+                    result.style.color = "blue";
+                    return "blue";
+                }
+
+            }
+            function showColor(colorr) {
+                document.getElementById("color_name").innerHTML = colorr;
+            }
+        </script>
+        </body>
+
+    </html>

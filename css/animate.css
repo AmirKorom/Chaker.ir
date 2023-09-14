@@ -1,0 +1,13 @@
+.ground {
+    transform: translate3d(0, -6px, 0);
+    height: 110px;
+}
+
+img {
+    padding-bottom: 0px;
+    margin-right: 1200px;
+}
+
+button {
+    transform: translate3d(0, -350px, 0);
+}

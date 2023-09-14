@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function Person(Name, age, height, kg) {
+            this.Name = Name;
+            this.age = age;
+            this.height = height;
+            this.kg = kg;
+            this.sayName = function () {
+                return "My name is:" + "A" + this.Name;
+            }
+            this.bmi = function () {
+                return "My bmi:" + (this.kg /0.1341640786499874 );
+            }
+
+        }
+        var amir = new Person('mir', 13, 180, 50);
+        console.log(amir.sayName());
+        console.log(amir.bmi())
+        console.log(amir.age)
+        console.log(amir.height)
+        console.log(amir.kg)
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+#bts {
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+.marg {
+    text-align: center;
+
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    border: 3px solid purple;
+    background-color: purple;
+    color: gold;
+}
+
+button {
+    font-size: 30px;
+    width: 100px;
+    border-radius: 9px;
+    background-color: aqua;
+
+}
+
+#nam:hover {
+    background-color: blue;
+}
+p{
+    font-size: 21px;
+}
