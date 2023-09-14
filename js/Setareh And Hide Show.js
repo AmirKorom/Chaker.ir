@@ -63,13 +63,13 @@ setInterval(() => {
     set.walk();
 }, 256)
 
-const tickGit = document.querySelector(".tickGit");
+const tickGit = document.getElementsByClassName("tickGit");
 
-const WaittingPage = document.querySelector(".WaittingPage");
+const WaittingPage = document.getElementsByClassName("WaittingPage");
 
-const WaitText = document.querySelector(".WaitText");
+const WaitText = document.getElementsByClassName("WaitText");
 
-const WaitGit = document.querySelector(".WaitGit");
+const WaitGit = document.getElementsByClassName("WaitGit");
 
 if (set.landing == 1205) {
     var promise = new Promise(function (resolve, reject) {
@@ -87,11 +87,12 @@ if (set.landing == 1205) {
     promise.then(
         setTimeout(() => {
 
-           result => WaittingPage.classList.toggle("hidden");
+            result => WaittingPage.classList.toggle("hidden"),
+            error => alert("error");
 
 
 
         }, 1500)
-);
-    
-    }
+    );
+
+}
