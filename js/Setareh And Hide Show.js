@@ -63,36 +63,5 @@ setInterval(() => {
     set.walk();
 }, 256)
 
-const tickGit = document.getElementsByClassName("tickGit");
-
-const WaittingPage = document.getElementsByClassName("WaittingPage");
-
-const WaitText = document.getElementsByClassName("WaitText");
-
-const WaitGit = document.getElementsByClassName("WaitGit");
-
-if (set.landing == 1205) {
-    var promise = new Promise(function (resolve, reject) {
 
 
-        tickGit.classList.toggle("hidden");
-
-        WaitGit.classList.toggle("hidden");
-
-        WaitText.classList.toggle("hidden");
-        resolve();
-
-    });
-
-    promise.then(
-        setTimeout(() => {
-
-            result => WaittingPage.classList.toggle("hidden"),
-            error => alert("error");
-
-
-
-        }, 1500)
-    );
-
-}
