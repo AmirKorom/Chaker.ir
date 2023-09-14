@@ -20,7 +20,7 @@ class girl extends humen {
         this.heigh = 10;
         this.landing = 0;
         this.position = 2;
-        this.changeX = () => {
+        this.changeXAndHideShowThings = () => {
 
             let intId = setInterval(() => {
 
@@ -28,7 +28,22 @@ class girl extends humen {
 
                 if (this.landing == 1205) {
 
+
                     clearInterval(intId);
+                    document.getElementById("tickGif").classList.toggle("hidden");
+
+                    document.getElementById("WaitGif").classList.toggle("hidden");
+
+                    document.getElementById("WaitText").classList.toggle("hidden");
+
+                    setTimeout(() => {
+                        document.getElementById("WaittingPage").classList.toggle("hidden");
+
+                        document.getElementById("BookPage").classList.toggle("hidden");
+                    }, 1200);
+
+
+
                 }
 
                 setareh.style.transform = `translate3d(${this.landing}px,0,0)`;
@@ -57,11 +72,10 @@ class girl extends humen {
 }
 var set = new girl();
 
-set.changeX();
+set.changeXAndHideShowThings();
 
 setInterval(() => {
+
     set.walk();
+
 }, 256)
-
-
-
