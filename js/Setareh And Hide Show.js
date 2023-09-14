@@ -87,10 +87,11 @@ if (set.landing == 1205) {
     promise.then(
         setTimeout(() => {
 
-            WaittingPage.classList.toggle("hidden");
+           result => WaittingPage.classList.toggle("hidden");
 
 
 
         }, 1500)
-}
-)
+);
+    
+    }
