@@ -19,79 +19,51 @@ $(document).ready(function () {
 });
 
 
-
-
-
 $(document).ready(function () {
 
     $("section").append($("<br> <br> <br> <br> <br>").html(""));
-    $("head").append($('<title id="car">').html(""));
-    $('body').append($('<p id="ins">').html("1"));
-    $('body').append($("<p id='pg'>").html("page"));
 
 });
-
-
-
-
-
-
-
 
 
 $(document).ready(function () {
-    $("#ins").hide()
-    $("#pg").hide()
-    document.getElementById("car").innerHTML = document.getElementById("pg").innerHTML + document.getElementById("ins").innerHTML;
+    if (document.fullscreenEnabled || document.webkitFullscreenEnabled) {
+        const toggleBtn = document.querySelector('.js-toggle-fullscreen-btn');
 
-});
-var i = "";
+        const styleEl = document.createElement('link');
+        styleEl.setAttribute('rel', 'stylesheet');
+        styleEl.setAttribute('href', 'https://codepen.io/tiggr/pen/poJoLyW.css');
+        styleEl.addEventListener('load', function () {
+            toggleBtn.hidden = false;
+        });
+        document.head.appendChild(styleEl);
 
-function Counter() {
-    $("#ins").html(i);
+        toggleBtn.addEventListener('click', function () {
+            if (document.fullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitFullscreenElement) {
+                document.webkitCancelFullScreen()
+            } else if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.documentElement.webkitRequestFullScreen();
+            }
+        });
 
-    document.getElementById("car").innerHTML = document.getElementById("pg").innerHTML + document.getElementById("ins").innerHTML;
-
-}
-
-$(document).ready(function(){
-if (document.fullscreenEnabled || document.webkitFullscreenEnabled) {
-    const toggleBtn = document.querySelector('.js-toggle-fullscreen-btn');
-
-    const styleEl = document.createElement('link');
-    styleEl.setAttribute('rel', 'stylesheet');
-    styleEl.setAttribute('href', 'https://codepen.io/tiggr/pen/poJoLyW.css');
-    styleEl.addEventListener('load', function () {
-        toggleBtn.hidden = false;
-    });
-    document.head.appendChild(styleEl);
-
-    toggleBtn.addEventListener('click', function () {
-        if (document.fullscreen) {
-            document.exitFullscreen();
-        } else if (document.webkitFullscreenElement) {
-            document.webkitCancelFullScreen()
-        } else if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else {
-            document.documentElement.webkitRequestFullScreen();
-        }
-    });
-
-    document.addEventListener('fullscreenchange', handleFullscreen);
-    document.addEventListener('webkitfullscreenchange', handleFullscreen);
+        document.addEventListener('fullscreenchange', handleFullscreen);
+        document.addEventListener('webkitfullscreenchange', handleFullscreen);
 
 
-    function handleFullscreen() {
-        if (document.fullscreen || document.webkitFullscreenElement) {
-            toggleBtn.classList.add('on');
-            toggleBtn.setAttribute('aria-label', 'Exit fullscreen mode');
-        } else {
-            toggleBtn.classList.remove('on');
-            toggleBtn.setAttribute('aria-label', 'Enter fullscreen mode');
+        function handleFullscreen() {
+            if (document.fullscreen || document.webkitFullscreenElement) {
+                toggleBtn.classList.add('on');
+                toggleBtn.setAttribute('aria-label', 'Exit fullscreen mode');
+            } else {
+                toggleBtn.classList.remove('on');
+                toggleBtn.setAttribute('aria-label', 'Enter fullscreen mode');
+            }
         }
     }
-}
 
 })
 
