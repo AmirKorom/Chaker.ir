@@ -66,7 +66,7 @@ class girl extends humen {
 
         this.walk = () => {
 
-            document.getElementById("setareh").setAttribute("src", `../images/${this.position}.jpg`);
+            document.getElementById("setareh").setAttribute("src", `../assets/images/${this.position}.jpg`);
         }
     }
 }
